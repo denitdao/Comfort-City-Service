@@ -1,6 +1,6 @@
 body {
   background: linear-gradient(270deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0) 12%), #EBF1F7;
 }
-.test {
+.container {
   background: red;
 }
