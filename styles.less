@@ -1,19 +1,28 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap&subset=cyrillic');
+@import url('https://fonts.googleapis.com/css?family=Merriweather&display=swap&subset=cyrillic');
+@import url('https://fonts.googleapis.com/css?family=EB+Garamond&display=swap&subset=cyrillic');
+
 @font-color: #2D2A32;
-@color-white: rgba(255, 255, 255, 0.6);
-@color-blue: #2274A5;
+@color-white: rgba(255, 255, 255, 0.3);
+@color-blue: #2274a5;
 @color-yellow: #FFCA3A;
 @color-orange: #FA8334;
 @color-green: #5FAD56;
-@color-background: #ffffff; //#EBF1F7
+@color-background: #EBF1F7; //#EBF1F7
+@color-background-lite: #F3F7FA;
 
 @site-radius: 26px;
-@shadow-dark-outer: 5px 5px 16px rgba(34, 116, 165, 0.3);
-@shadow-white-outer: -6px -6px 16px #FFFFFF;
-@shadow-dark-inner: inset @shadow-dark-outer;
-@shadow-white-inner: inset @shadow-white-outer;
+@shadow-dark-outer-normal: 6px 6px 16px rgba(34, 116, 165, 0.25);
+@shadow-white-outer-normal: -6px -6px 16px #FFFFFF;
+@shadow-dark-inner-pressed: 3px 3px 8px rgba(34, 116, 165, 0.07);
+@shadow-white-inner-pressed: -3px -3px 8px rgba(255, 255, 255, 0.5);
+@shadow-dark-inner-normal: inset @shadow-dark-inner-pressed;
+@shadow-white-inner-normal: inset @shadow-white-inner-pressed;
+@shadow-dark-outer-pressed: inset @shadow-dark-outer-normal;
+@shadow-white-outer-pressed: inset @shadow-white-outer-normal;
 
-@margin-body-xs: 1vw;
+
+@margin-body-xs: 3vw;
 @margin-xs: 25px; //<576px
 @margin-sm: 30px; //≥576px
 @margin-md: 35px; //≥768px
@@ -32,11 +41,11 @@ body {
     @media (max-width: 576px) {
         margin: 0 @margin-body-xs;
     }
-    font-family: Roboto Slab;
+    font-family: Merriweather;
     font-style: normal;
     font-weight: normal;
     color: @font-color;
-    background: linear-gradient(270deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0) 12%), @color-background;
+    background: linear-gradient(90deg, rgba(34, 116, 165, 0.08) 0%, rgba(255, 255, 255, 0) 12%), linear-gradient(270deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 12%), @color-background;
 }
 
 p {
@@ -57,6 +66,11 @@ h2 {
     margin: 0;
 }
 
+a {
+    text-decoration: none;
+    color: @font-color;
+}
+
 .container {
     min-height: 100vh;
 }
@@ -64,7 +78,20 @@ h2 {
 .header {
     background: red;
     height: 40px;
-    align-items: baseline;
+    .title {
+        flex-grow: 1;
+        .logo {
+            padding: 0;
+            width: 38px;
+        }
+        .name {
+            padding: 0 0 0 @padding-xs;
+        }
+    }
+    img {
+        height: 40px;
+    }
+    //align-items: baseline;
     
     @media (min-width: 576px) {
 
@@ -77,27 +104,25 @@ h2 {
     }
     @media (min-width: 1200px) {
         margin: 40px 0px;
-        height: 80px;
     }
 
     h1 {
-        font-weight: bold;
-        font-size: 36px;
-        margin: 0;
+        font-size: 30px;
     }
     
     h2 {
-        font-weight: bold;
-        font-size: 28px;
-        margin: 0;
+        font-size: 20px;
     }
 }
 
 .box-info-1 {
     margin: @margin-xs 0px @margin-xs * 2;
+    background: @color-background-lite;
+    border-radius: @site-radius;
+    box-shadow: @shadow-dark-outer-normal, @shadow-white-outer-normal;
     .left {
         border-left: 4px solid @color-blue;
-        
+        border-radius: @site-radius;
         margin: 0 0 @padding-xs;
     }
     .col-md-6 {
@@ -171,10 +196,12 @@ h2 {
 }
 
 .box-info-2 {
+    background: @color-background-lite;
     justify-content: center;
     margin: @margin-xs 0px @margin-xs * 2;
     border: 4px solid @color-blue;
     border-radius: @site-radius;
+    box-shadow: @shadow-dark-outer-normal, @shadow-white-outer-normal;
     .row {
         margin: 0;
         
@@ -228,23 +255,19 @@ h2 {
         justify-content: center;
         margin: 0 @margin-xs / 2;
     }
-    a {
-        text-decoration: none;
-    }
     .button-plate {
         flex-grow: 1;
         justify-content: center;
-        //border: 4px solid @color-white ;
+        border: 2px solid @color-white;
         border-radius: @site-radius;
-        box-shadow: @shadow-dark-outer, @shadow-white-outer;
-        background: @color-background;
+        box-shadow: @shadow-dark-outer-normal, @shadow-white-outer-normal, @shadow-dark-inner-normal, @shadow-white-inner-normal;
+        background: @color-background-lite;
         h2 {
             color: @color-blue;
             align-self: center;
         }
         p {
             font-size: 18px;
-            color: @font-color;
             align-self: flex-start;
         }
         .row {
@@ -258,7 +281,7 @@ h2 {
         min-height: 220px;
 
         &:hover {
-            box-shadow: @shadow-dark-inner, @shadow-white-inner;
+            box-shadow: @shadow-dark-outer-pressed, @shadow-white-outer-pressed, @shadow-dark-inner-pressed, @shadow-white-inner-pressed;
         }
     }
     @media (min-width: 576px) {
