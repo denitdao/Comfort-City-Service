@@ -71,47 +71,235 @@ a {
     color: @font-color;
 }
 
+.button {
+    padding: @padding-xs;
+    border: 2px solid @color-blue;
+    border-radius: @site-radius;
+    box-shadow: @shadow-dark-outer-normal, @shadow-white-outer-normal, @shadow-dark-inner-normal, @shadow-white-inner-normal;
+    background: @color-background-lite;
+}
+
+.button-pressed {
+    padding: @padding-xs;
+    border: 2px solid @color-blue;
+    border-radius: @site-radius;
+    box-shadow: @shadow-dark-outer-pressed, @shadow-white-outer-pressed, @shadow-dark-inner-pressed, @shadow-white-inner-pressed;
+    background: @color-background-lite;
+}
+
+.green {
+    border: 2px solid @color-green;
+}
+
+.yellow {
+    border: 2px solid @color-yellow;
+}
+
+.orange {
+    border: 2px solid @color-orange;
+}
+
+.white {
+    border: 2px solid @color-white;
+}
+
 .container {
     min-height: 100vh;
 }
 
 .header {
-    background: red;
-    height: 40px;
-    .title {
-        flex-grow: 1;
+    margin: @margin-xs 0 @margin-xs * 2;
+    .logo {
+        display: flex;
+        align-self: center;
+        justify-content: flex-start;
+        width: 14%;
+    }
+    .name {
+        align-self: center;
+        text-align: center;
+        justify-content: center;
+        flex-grow: 0;
+        padding: 0 @padding-xs;
+        width: 72%;
+    }
+    .menu-open {
+        display: flex;
+        align-self: center;
+        align-content: center;
+        justify-content: flex-end;
+        width: 14%;
+        img {
+            width: 20px;
+            height: 20px;
+        }
+    }
+    .menu-close {
+        display: none;
+        align-self: center;
+        align-content: center;
+        justify-content: flex-end;
+        width: 14%;
+    }
+    .buttons {
+        align-self: center;
+        justify-content: flex-end;
+        text-align: center;
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        margin: @padding-xs;
+        padding: @padding-xs;
+        border: 2px solid @color-blue;
+        border-radius: @site-radius;
+        box-shadow: @shadow-dark-outer-pressed, @shadow-white-outer-pressed, @shadow-dark-inner-pressed, @shadow-white-inner-pressed;
+        background: @color-background-lite;
+        h2:hover {
+            border-bottom: 2px solid @color-blue;
+            padding: 0 0 4px;
+            margin: 0 0 -6px;
+        }
+    }
+    li {
+        margin: @padding-xs;
+    }
+    h1 {
+        font-size: 24px;
+    }
+    h2 {
+        font-size: 22px;
+    }
+    .here {
+        border-bottom: 2px solid @color-blue;
+        padding: 0 0 4px;
+        margin: 0 0 -6px;
+    }
+    @media (min-width: 576px) {
+        margin: @margin-sm 0 @margin-sm * 2;
         .logo {
-            padding: 0;
-            width: 38px;
+            width: auto;
+            img {
+                width: 50px;
+                height: 50px;
+            }
         }
         .name {
-            padding: 0 0 0 @padding-xs;
+            align-self: center;
+            text-align: center;
+            justify-content: center;
+            flex-grow: 1;
+            width: auto;
+            margin: 0 @padding-sm;
+        }
+        .menu-open, .menu-close {
+            width: auto;
+            img {
+                width: 30px;
+                height: 30px;
+            }
+        }
+        .buttons {
+            margin: @padding-sm;
+            padding: @padding-sm;
+        }
+        li {
+            margin: @padding-sm;
+        }
+        h1 {
+            font-size: 34px;
+            width: 100%;
+        }
+        h2{
+            font-size: 22px;
+        }
+    }
+    @media (min-width: 768px) {
+        margin: @margin-md 0 @margin-md * 2;
+        .buttons {
+            margin: @padding-md;
+            padding: @padding-md;
+        }
+        li {
+            margin: @padding-md;
+        }
+        img {
+            width: 60px;
+            height: 60px;
+        }
+        h1{
+            font-size: 34px;
+        }
+        h2{
+            font-size: 22px;
+        }
+    }
+    @media (min-width: 992px) {
+        margin: @margin-lg 0 @margin-lg * 2;
+        .logo {
+            align-self: center;
+        }
+        .name {
+            align-self: center;
+            text-align: left;
+            flex-grow: 1;
+            margin: 0 0 0 @padding-lg / 2;
+        }
+        .menu-open, .menu-close {
+            display: none;
+        }
+        .buttons {
+            align-self: center;
+            justify-content: flex-end;
+            display: flex;
+            flex-direction: row;
+            margin: 0 -@padding-lg / 2;
+            padding: 0;
+            width: auto;
+            border: none;
+            box-shadow: none;
+            background: none;
+        }
+        li {
+            margin: 0 @padding-lg / 2;
+        }
+        img {
+            width: 70px;
+            height: 70px;
+        }
+        h1{
+            font-size: 30px;
+        }
+        h2{
+            font-size: 20px;
+        }
+    }
+    @media (min-width: 1200px) {
+        margin: @margin-xl 0 @margin-xl * 2;
+        .name {
+            margin: 0 0 0 @padding-xl / 2;
+        }
+        .buttons {
+            margin: 0 -@padding-xl / 2;
+        }
+        li {
+            margin: 0 @padding-xl / 2;
+        }
+        img {
+            width: 80px;
+            height: 80px;
+        }
+        h1{
+            font-size: 32px;
+        }
+        h2{
+            font-size: 22px;
         }
     }
     img {
-        height: 40px;
+        margin: 0 0 -4px;
     }
-    //align-items: baseline;
-    
-    @media (min-width: 576px) {
-
-    }
-    @media (min-width: 768px) {
-
-    }
-    @media (min-width: 992px) {
-
-    }
-    @media (min-width: 1200px) {
-        margin: 40px 0px;
-    }
-
-    h1 {
-        font-size: 30px;
-    }
-    
-    h2 {
-        font-size: 20px;
+    ul {
+        list-style: none;
     }
 }
 
@@ -258,7 +446,7 @@ a {
     .button-plate {
         flex-grow: 1;
         justify-content: center;
-        border: 2px solid @color-white;
+        //border: 2px solid @color-white;
         border-radius: @site-radius;
         box-shadow: @shadow-dark-outer-normal, @shadow-white-outer-normal, @shadow-dark-inner-normal, @shadow-white-inner-normal;
         background: @color-background-lite;
