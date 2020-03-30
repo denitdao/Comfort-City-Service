@@ -399,13 +399,13 @@ a {
     @media (min-width: 576px) {
         margin: @margin-sm 0 @margin-sm * 2;
         .row {
-            padding: 0 @padding-sm;
+            padding: 0 @padding-sm @padding-sm;
         }
     }
     @media (min-width: 768px) {
         margin: @margin-md 0 @margin-md * 2;
         .row {
-            padding: 0 @padding-md;
+            padding: 0 @padding-md @padding-md;
             min-height: 160px;
         }
     }
@@ -461,12 +461,12 @@ a {
         .row {
             text-align: center;
             justify-content: center;
-            min-height: 50%;
+            min-height: 80px;
             min-width: 260px;
         }
-        padding: 0 @padding-xs;
+        padding: @padding-xs;
         margin: 0 0 @margin-xs;
-        min-height: 220px;
+        min-height: 160px;
 
         &:hover {
             box-shadow: @shadow-dark-outer-pressed, @shadow-white-outer-pressed, @shadow-dark-inner-pressed, @shadow-white-inner-pressed;
@@ -482,8 +482,12 @@ a {
             margin: 0;
         }
         .button-plate {
-            padding: 0 @padding-sm;
+            padding: @padding-sm;
             margin: 0 0 @margin-sm;
+            .row {
+                min-height: 60px;
+            }
+            min-height: 120px;
         }
     }
     @media (min-width: 768px) {
@@ -498,11 +502,13 @@ a {
             flex-grow: 0;
             .row {
                 width: 290px;
+                min-height: 90px;
             }
+            min-height: 180px;
             h2 {
                 width: 80%;
             }
-            padding: 0 @padding-md;
+            padding: @padding-md;
             margin: 0 0 @margin-md;
         }
     }
@@ -515,7 +521,7 @@ a {
             justify-content: space-evenly;
         }
         .button-plate {
-            padding: 0 @padding-lg;
+            padding: @padding-lg;
             margin: 0 0 @margin-lg;
             //min-height: 310px;
         }
@@ -529,27 +535,130 @@ a {
             justify-content: space-between;
         }
         .button-plate {
-            padding: 0 @padding-xl;
+            padding: @padding-xl;
             margin: 0 0 @margin-xl;
         }
     }
 }
 
 .footer {
-    background: green;
+    padding: @padding-xs * 2 0 @padding-xs;
     border-top: 4px solid @color-blue;
-    margin: @margin-xs 0px 0px;
+    align-items: baseline;
+    h1 {
+        font-size: 24px;
+        margin: 0 0 @padding-xs;
+    }
+    h2 {
+        font-size: 18px;
+        margin: @padding-xs 0;
+    }
+    p {
+        font-size: 16px;
+    }
+    .creator {
+        margin: @margin-xs * 2 0 0;
+    }
+    .left {
+        margin: 0 0 @margin-sm;
+    }
+    .creator {
+        justify-content: center;
+        margin: @margin-xs * 2 0 0;
+    }
+    .title {
+        justify-content: center;
+    }
+    .item {
+        display: none;
+    }
+    .right .row {
+        justify-content: space-between;
+    }
     @media (min-width: 576px) {
-        margin: @margin-sm 0px 0px;
+        padding: @padding-sm * 2 0 @padding-sm;
+        h1 {
+            font-size: 26px;
+            margin: 0 0 @padding-sm;
+        }
+        h2 {
+            font-size: 20px;
+            margin: @padding-sm 0;
+        }
+        p {
+            font-size: 18px;
+        }
+        .creator {
+            margin: @margin-sm * 2 0 0;
+        }
+        .left {
+            margin: 0 0 @margin-sm;
+        }
     }
     @media (min-width: 768px) {
-        margin: @margin-md 0px 0px;
+        padding: @padding-md * 2 0 @padding-md;
+        h1 {
+            font-size: 26px;
+            margin: 0 0 @padding-md;
+        }
+        h2 {
+            font-size: 20px;
+            margin: @padding-md 0;
+        }
+        p {
+            font-size: 18px;
+        }
+        .creator {
+            margin: @margin-md * 2 0 0;
+        }
+        .left {
+            margin: 0 0 @margin-md;
+        }
     }
     @media (min-width: 992px) {
-        margin: @margin-lg 0px 0px;
+        padding: @padding-lg * 2 0 @padding-lg;
+        .title {
+            justify-content: flex-start;
+        }
+        .item {
+            display: block;
+        }
+        h1 {
+            font-size: 26px;
+            margin: 0 0 @padding-lg;
+        }
+        h2 {
+            font-size: 20px;
+            margin: 0 0 @padding-lg;
+        }
+        p {
+            font-size: 18px;
+        }
+        .creator {
+            margin: @margin-lg * 2 0 0;
+        }
+        .right .row{
+            justify-content: flex-start;
+        }
     }
     @media (min-width: 1200px) {
-        margin: @margin-xl 0px 0px;
-        height: 300px;
+        padding: @padding-xl * 2 0 @padding-xl;
+        h1 {
+            font-size: 28px;
+            margin: 0 0 @padding-xl;
+        }
+        h2 {
+            font-size: 20px;
+            margin: 0 0 @padding-xl;
+        }
+        p {
+            font-size: 18px;
+        }
+        .creator {
+            margin: @margin-xl * 2 0 0;
+        }
+        a:hover {
+            opacity: 0.7;
+        }
     }
 }
