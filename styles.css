@@ -39,7 +39,7 @@ p {
 }
 h1 {
   font-weight: bold;
-  font-size: 36px;
+  font-size: 34px;
   margin: 0;
 }
 h2 {
@@ -77,8 +77,25 @@ a {
 .white {
   border: 2px solid rgba(255, 255, 255, 0.3);
 }
+.green-4px {
+  border: 4px solid #5FAD56;
+}
+.yellow-4px {
+  border: 4px solid #FFCA3A;
+}
+.orange-4px {
+  border: 4px solid #FA8334;
+}
+.white-4px {
+  border: 4px solid rgba(255, 255, 255, 0.3);
+}
 .container {
   min-height: 100vh;
+}
+@media (min-width: 576px) {
+  .container h1 {
+    font-size: 36px;
+  }
 }
 .header {
   margin: 25px 0 50px;
@@ -419,6 +436,7 @@ a {
 }
 .box-info-2 h1 {
   align-self: center;
+  text-align: center;
 }
 .box-services {
   justify-content: center;
@@ -431,6 +449,10 @@ a {
   align-content: center;
   min-height: 180px;
   padding: 0 10px;
+}
+.box-services .title h1 {
+  align-self: center;
+  text-align: center;
 }
 .box-services .buttons {
   width: 100%;
@@ -536,6 +558,173 @@ a {
   .box-services .button-plate {
     padding: 30px;
     margin: 0 0 50px;
+  }
+}
+.payment {
+  flex-direction: column;
+}
+.payment .title {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  min-height: 180px;
+  padding: 0 10px;
+}
+.payment .title h1 {
+  align-self: center;
+  text-align: center;
+}
+.payment .box {
+  background: #F3F7FA;
+  margin: 25px 0px 25px;
+  padding: 10px;
+  border: 4px solid none;
+  border-radius: 26px;
+  box-shadow: 6px 6px 16px rgba(34, 116, 165, 0.25), -6px -6px 16px #FFFFFF;
+}
+.payment .box .info {
+  min-height: 200px;
+}
+.payment .box .pay {
+  min-height: 180px;
+  padding: 10px 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.payment .box .pay .row {
+  justify-content: space-between;
+}
+.payment .box .pay .right {
+  justify-content: flex-end;
+}
+.payment .box .pay .button {
+  align-self: flex-end;
+}
+.payment .box h2 {
+  font-size: 24px;
+}
+.payment .buttons {
+  margin: 0 0 50px;
+}
+.payment .buttons .col {
+  margin: 0 25px 0 0;
+}
+.payment .button {
+  padding: 5px 10px;
+  margin: 25px 0 0;
+  width: fit-content;
+}
+.payment .button p {
+  font-size: 20px;
+  font-weight: bold;
+  align-self: center;
+  text-align: center;
+}
+.payment .button:hover {
+  box-shadow: inset 6px 6px 16px rgba(34, 116, 165, 0.25), inset -6px -6px 16px #FFFFFF, 3px 3px 8px rgba(34, 116, 165, 0.07), -3px -3px 8px rgba(255, 255, 255, 0.5);
+}
+@media (min-width: 576px) {
+  .payment .title {
+    padding: 0 15px;
+  }
+  .payment .box {
+    margin: 30px 0px 30px;
+    padding: 15px;
+  }
+  .payment .box .info {
+    min-height: 160px;
+  }
+  .payment .box .pay {
+    min-height: 160px;
+    padding: 15px 0 0;
+  }
+  .payment .buttons {
+    margin: 0 0 60px;
+  }
+  .payment .buttons .col {
+    margin: 0 30px 0 0;
+  }
+  .payment .button {
+    padding: 5px 15px;
+    margin: 30px 0 0;
+  }
+}
+@media (min-width: 768px) {
+  .payment .title {
+    padding: 0 20px;
+  }
+  .payment .box {
+    margin: 35px 0px 35px;
+    padding: 20px;
+  }
+  .payment .box .pay {
+    padding: 25px 0 0;
+  }
+  .payment .box h2 {
+    font-size: 28px;
+  }
+  .payment .buttons {
+    margin: 0 0 70px;
+  }
+  .payment .buttons .col {
+    margin: 0 35px 0 0;
+  }
+  .payment .button {
+    padding: 5px 20px;
+    margin: 35px 0 0;
+  }
+}
+@media (min-width: 992px) {
+  .payment .title {
+    padding: 0 25px;
+  }
+  .payment .box {
+    margin: 40px 0px 40px;
+    padding: 25px;
+  }
+  .payment .box .pay {
+    padding: 25px 0 0;
+  }
+  .payment .buttons {
+    margin: 0 0 80px;
+  }
+  .payment .buttons .col {
+    margin: 0 40px 0 0;
+  }
+  .payment .button {
+    padding: 5px 25px;
+    margin: 20px 0 0;
+  }
+}
+@media (min-width: 1200px) {
+  .payment .title {
+    min-height: 180px;
+    padding: 0 30px;
+  }
+  .payment .box {
+    margin: 50px 0px 50px;
+    padding: 30px;
+  }
+  .payment .box .info {
+    min-height: 180px;
+  }
+  .payment .box .pay {
+    min-height: 180px;
+    padding: 30px 0 0;
+  }
+  .payment .buttons {
+    margin: 0 0 100px;
+  }
+  .payment .buttons .col {
+    margin: 0 50px 0 0;
+  }
+  .payment .button {
+    padding: 5px 30px;
+    margin: 25px 0 0;
+  }
+  .payment .button p {
+    font-size: 22px;
   }
 }
 .footer {
